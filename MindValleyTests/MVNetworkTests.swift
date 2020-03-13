@@ -22,7 +22,7 @@ class MVNetworkTests: XCTestCase {
         mockNetworkManager = nil
     }
 
-    func testRequest() {
+    func testRequestSucceed() {
         let exp = expectation(description: #function)
         mockNetworkManager.request(path: .newEpisodes, model: TestCoding.self) { [weak self] (response, error) in
             if error == nil {
@@ -35,7 +35,18 @@ class MVNetworkTests: XCTestCase {
         }
         wait(for: [exp], timeout: 2.0)
     }
-
+    func testRequestFailed() {
+           let exp = expectation(description: #function)
+        mockNetworkManager.request(path: .newEpisodes, model: String.self) { [weak self] (response, error) in
+               if error != nil {
+                  XCTAssertEqual(error, MVError.faildToDecode)
+               } else {
+                   XCTFail("decoding not work successfully")
+               }
+               exp.fulfill()
+           }
+           wait(for: [exp], timeout: 2.0)
+       }
 }
 
 class URLSessionDataTaskMock: URLSessionDataTaskProtocol {

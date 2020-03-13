@@ -13,7 +13,6 @@
 		35F44396241B839500CC9788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F44394241B839500CC9788 /* Main.storyboard */; };
 		35F44398241B839700CC9788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35F44397241B839700CC9788 /* Assets.xcassets */; };
 		35F4439B241B839700CC9788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F44399241B839700CC9788 /* LaunchScreen.storyboard */; };
-		35F443A6241B839700CC9788 /* MindValleyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443A5241B839700CC9788 /* MindValleyTests.swift */; };
 		35F443B5241B8A9200CC9788 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443B4241B8A9200CC9788 /* NetworkManager.swift */; };
 		35F443B7241B945400CC9788 /* MVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443B6241B945400CC9788 /* MVError.swift */; };
 		35F443B9241B949500CC9788 /* MVEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443B8241B949500CC9788 /* MVEndPoints.swift */; };
@@ -47,7 +46,6 @@
 		35F4439A241B839700CC9788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35F4439C241B839700CC9788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35F443A1241B839700CC9788 /* MindValleyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindValleyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35F443A5241B839700CC9788 /* MindValleyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindValleyTests.swift; sourceTree = "<group>"; };
 		35F443A7241B839700CC9788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35F443B4241B8A9200CC9788 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		35F443B6241B945400CC9788 /* MVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVError.swift; sourceTree = "<group>"; };
@@ -117,9 +115,8 @@
 			children = (
 				35F443C5241BA62800CC9788 /* MVErrorTest.swift */,
 				35F443C7241BA81800CC9788 /* MVEndpointTest.swift */,
-				35F443A5241B839700CC9788 /* MindValleyTests.swift */,
-				35F443A7241B839700CC9788 /* Info.plist */,
 				35F443CB241BA8CC00CC9788 /* MVNetworkTests.swift */,
+				35F443A7241B839700CC9788 /* Info.plist */,
 			);
 			path = MindValleyTests;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35F443A6241B839700CC9788 /* MindValleyTests.swift in Sources */,
 				35F443C8241BA81800CC9788 /* MVEndpointTest.swift in Sources */,
 				35F443C6241BA62800CC9788 /* MVErrorTest.swift in Sources */,
 				35F443CC241BA8CC00CC9788 /* MVNetworkTests.swift in Sources */,

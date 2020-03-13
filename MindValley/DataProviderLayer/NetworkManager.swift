@@ -7,7 +7,7 @@
 //
 
 import Foundation
-typealias NetworkCompletion = ( Decodable?, Error? ) -> Void
+typealias NetworkCompletion = ( Decodable?, MVError? ) -> Void
 
 protocol MVNetworkManagerProtocol {
     var session: URLSessionProtocol { get }
@@ -35,7 +35,7 @@ extension MVNetworkManager {
         let currentTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
             // get status
             guard error == nil, let jsonData = data else {
-                DispatchQueue.main.async {completion(nil, error)}
+                DispatchQueue.main.async {completion(nil, .unknown)}
                 return}
             // map  response
             do {

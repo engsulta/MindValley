@@ -23,6 +23,7 @@ class MVEndPointTest: XCTestCase {
                                    MVEndPoint.channels,
                                    MVEndPoint.categories].enumerated() {
                                     XCTAssertEqual(testEndpoint.rawValue, expected[index])
+                                    XCTAssertEqual(testEndpoint.url, URL(string: expected[index]))
         }
     }
 }
