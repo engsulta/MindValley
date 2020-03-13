@@ -14,6 +14,17 @@
 		35F44398241B839700CC9788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35F44397241B839700CC9788 /* Assets.xcassets */; };
 		35F4439B241B839700CC9788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F44399241B839700CC9788 /* LaunchScreen.storyboard */; };
 		35F443A6241B839700CC9788 /* MindValleyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443A5241B839700CC9788 /* MindValleyTests.swift */; };
+		35F443B5241B8A9200CC9788 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443B4241B8A9200CC9788 /* NetworkManager.swift */; };
+		35F443B7241B945400CC9788 /* MVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443B6241B945400CC9788 /* MVError.swift */; };
+		35F443B9241B949500CC9788 /* MVEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443B8241B949500CC9788 /* MVEndPoints.swift */; };
+		35F443BB241B94CE00CC9788 /* HelperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443BA241B94CE00CC9788 /* HelperProtocols.swift */; };
+		35F443BE241BA05B00CC9788 /* ResultDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443BD241BA05B00CC9788 /* ResultDecodable.swift */; };
+		35F443C0241BA1B600CC9788 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443BF241BA1B600CC9788 /* Episodes.swift */; };
+		35F443C2241BA24300CC9788 /* Channels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443C1241BA24300CC9788 /* Channels.swift */; };
+		35F443C4241BA3CB00CC9788 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443C3241BA3CB00CC9788 /* Categories.swift */; };
+		35F443C6241BA62800CC9788 /* MVErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443C5241BA62800CC9788 /* MVErrorTest.swift */; };
+		35F443C8241BA81800CC9788 /* MVEndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443C7241BA81800CC9788 /* MVEndpointTest.swift */; };
+		35F443CC241BA8CC00CC9788 /* MVNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F443CB241BA8CC00CC9788 /* MVNetworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +49,17 @@
 		35F443A1241B839700CC9788 /* MindValleyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindValleyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35F443A5241B839700CC9788 /* MindValleyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindValleyTests.swift; sourceTree = "<group>"; };
 		35F443A7241B839700CC9788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35F443B4241B8A9200CC9788 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		35F443B6241B945400CC9788 /* MVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVError.swift; sourceTree = "<group>"; };
+		35F443B8241B949500CC9788 /* MVEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVEndPoints.swift; sourceTree = "<group>"; };
+		35F443BA241B94CE00CC9788 /* HelperProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperProtocols.swift; sourceTree = "<group>"; };
+		35F443BD241BA05B00CC9788 /* ResultDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDecodable.swift; sourceTree = "<group>"; };
+		35F443BF241BA1B600CC9788 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		35F443C1241BA24300CC9788 /* Channels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channels.swift; sourceTree = "<group>"; };
+		35F443C3241BA3CB00CC9788 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		35F443C5241BA62800CC9788 /* MVErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVErrorTest.swift; sourceTree = "<group>"; };
+		35F443C7241BA81800CC9788 /* MVEndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVEndpointTest.swift; sourceTree = "<group>"; };
+		35F443CB241BA8CC00CC9788 /* MVNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVNetworkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +101,8 @@
 		35F4438D241B839500CC9788 /* MindValley */ = {
 			isa = PBXGroup;
 			children = (
-				35F4438E241B839500CC9788 /* AppDelegate.swift */,
-				35F44390241B839500CC9788 /* SceneDelegate.swift */,
+				35F443B1241B87D600CC9788 /* DataProviderLayer */,
+				35F443B0241B87BF00CC9788 /* app */,
 				35F44392241B839500CC9788 /* ViewController.swift */,
 				35F44394241B839500CC9788 /* Main.storyboard */,
 				35F44397241B839700CC9788 /* Assets.xcassets */,
@@ -93,10 +115,45 @@
 		35F443A4241B839700CC9788 /* MindValleyTests */ = {
 			isa = PBXGroup;
 			children = (
+				35F443C5241BA62800CC9788 /* MVErrorTest.swift */,
+				35F443C7241BA81800CC9788 /* MVEndpointTest.swift */,
 				35F443A5241B839700CC9788 /* MindValleyTests.swift */,
 				35F443A7241B839700CC9788 /* Info.plist */,
+				35F443CB241BA8CC00CC9788 /* MVNetworkTests.swift */,
 			);
 			path = MindValleyTests;
+			sourceTree = "<group>";
+		};
+		35F443B0241B87BF00CC9788 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				35F4438E241B839500CC9788 /* AppDelegate.swift */,
+				35F44390241B839500CC9788 /* SceneDelegate.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		35F443B1241B87D600CC9788 /* DataProviderLayer */ = {
+			isa = PBXGroup;
+			children = (
+				35F443BC241B9EAB00CC9788 /* DataModels */,
+				35F443B4241B8A9200CC9788 /* NetworkManager.swift */,
+				35F443B6241B945400CC9788 /* MVError.swift */,
+				35F443B8241B949500CC9788 /* MVEndPoints.swift */,
+				35F443BA241B94CE00CC9788 /* HelperProtocols.swift */,
+			);
+			path = DataProviderLayer;
+			sourceTree = "<group>";
+		};
+		35F443BC241B9EAB00CC9788 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				35F443BD241BA05B00CC9788 /* ResultDecodable.swift */,
+				35F443BF241BA1B600CC9788 /* Episodes.swift */,
+				35F443C1241BA24300CC9788 /* Channels.swift */,
+				35F443C3241BA3CB00CC9788 /* Categories.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +257,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35F443B5241B8A9200CC9788 /* NetworkManager.swift in Sources */,
+				35F443C2241BA24300CC9788 /* Channels.swift in Sources */,
 				35F44393241B839500CC9788 /* ViewController.swift in Sources */,
+				35F443BE241BA05B00CC9788 /* ResultDecodable.swift in Sources */,
+				35F443C0241BA1B600CC9788 /* Episodes.swift in Sources */,
 				35F4438F241B839500CC9788 /* AppDelegate.swift in Sources */,
+				35F443C4241BA3CB00CC9788 /* Categories.swift in Sources */,
 				35F44391241B839500CC9788 /* SceneDelegate.swift in Sources */,
+				35F443B7241B945400CC9788 /* MVError.swift in Sources */,
+				35F443BB241B94CE00CC9788 /* HelperProtocols.swift in Sources */,
+				35F443B9241B949500CC9788 /* MVEndPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				35F443A6241B839700CC9788 /* MindValleyTests.swift in Sources */,
+				35F443C8241BA81800CC9788 /* MVEndpointTest.swift in Sources */,
+				35F443C6241BA62800CC9788 /* MVErrorTest.swift in Sources */,
+				35F443CC241BA8CC00CC9788 /* MVNetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
