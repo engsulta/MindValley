@@ -7,13 +7,12 @@
 //
 
 import Foundation
-typealias NetworkCompletion = ( Decodable?, MVError? ) -> Void
+typealias NetworkCompletion = ( _ response: Decodable?,_ error: MVError?, _ forPath: MVEndPoint ) -> Void
 
 protocol MVNetworkManagerProtocol {
     var session: URLSessionProtocol { get }
-    func request<T: Decodable>(path: MVEndPoint, model: T.Type, completion: @escaping NetworkCompletion)
+    func request<T:Decodable>(path: MVEndPoint, model: T.Type, completion: @escaping NetworkCompletion)
 }
-
 class MVNetworkManager: MVNetworkManagerProtocol {
     static let shared = {
         return MVNetworkManager()
@@ -25,30 +24,30 @@ class MVNetworkManager: MVNetworkManagerProtocol {
 }
 
 extension MVNetworkManager {
-    func request<T>(path: MVEndPoint, model: T.Type, completion: @escaping NetworkCompletion) where T : Decodable {
+    func request<T:Decodable>(path: MVEndPoint, model: T.Type, completion: @escaping NetworkCompletion) {
         guard let url = path.url else {
             DispatchQueue.main.async {
-                completion(nil, MVError.missingURL)
+                completion(nil, MVError.missingURL, path)
             }
             return
         }
         let currentTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
             // get status
             guard error == nil, let jsonData = data else {
-                DispatchQueue.main.async {completion(nil, .unknown)}
+                DispatchQueue.main.async {completion(nil, .unknown, path)}
                 return}
             // map  response
             do {
-                
+               
                 let modelType = ResultDecodable<T>.self
                 let responseModel = try JSONDecoder().decode(modelType, from: jsonData)
                 print(responseModel)
                 DispatchQueue.main.async {
-                    completion(responseModel, nil)
+                    completion(responseModel.data, nil,path)
                 }
             } catch {
                 DispatchQueue.main.async {
-                    completion(nil, MVError.faildToDecode)
+                    completion(nil, MVError.faildToDecode, path)
                 }
             }
             
@@ -56,4 +55,3 @@ extension MVNetworkManager {
         currentTask.resume()
     }
 }
-

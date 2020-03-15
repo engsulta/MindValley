@@ -20,7 +20,6 @@ final class ImageCoordinator {
         
         let imageCacheKey = photoURLString
         let resource = ImageResource(downloadURL: url, cacheKey: imageCacheKey)
-        
         KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { (image, error, cacheType, url) in
             DispatchQueue.main.async {
                 completion(image, error)

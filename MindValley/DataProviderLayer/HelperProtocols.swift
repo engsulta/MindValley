@@ -32,3 +32,5 @@ extension URLSession: URLSessionProtocol {
 
 
 extension URLSessionDataTask: URLSessionDataTaskProtocol {}
+class UniqueId {
+}
