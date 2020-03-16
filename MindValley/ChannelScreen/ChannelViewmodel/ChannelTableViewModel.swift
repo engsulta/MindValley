@@ -28,8 +28,6 @@ class ChannelTableViewModel {
             guard let self = self else { return }
             
             let screenSection = ScreenSection(endPoint: section)
-            /// stop loading section or hide shimmer for this section
-            self.updateLoadingStatus?(false, screenSection)
             
             /// do not do any thing in case of error so when section reload will not show this section
             guard error == nil, let response = responseModel else { return }
@@ -48,8 +46,10 @@ class ChannelTableViewModel {
                     self.mapCategoriesToViewModel(categories: categories) }
                 
             }
+            /// stop loading section or hide shimmer for this section
+            self.updateLoadingStatus?(false, screenSection)
             /// reload table for each section
-            self.reloadTableSectionClosure?(screenSection)
+            //self.reloadTableSectionClosure?(screenSection)
         }
            
     }

@@ -27,6 +27,12 @@
 		35A161D7241D8E61004E2EEF /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A161CA241D8E61004E2EEF /* Roboto-Bold.ttf */; };
 		35A161D8241D8E61004E2EEF /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A161CB241D8E61004E2EEF /* Roboto-Thin.ttf */; };
 		35A161D9241D8E61004E2EEF /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A161CC241D8E61004E2EEF /* Roboto-Black.ttf */; };
+		35A161DC241FA8DC004E2EEF /* MediaShimmerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A161DA241FA8DC004E2EEF /* MediaShimmerViewCell.swift */; };
+		35A161DD241FA8DC004E2EEF /* MediaShimmerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A161DB241FA8DC004E2EEF /* MediaShimmerViewCell.xib */; };
+		35A161E1241FB03A004E2EEF /* CategoryShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A161DF241FB03A004E2EEF /* CategoryShimmerCell.swift */; };
+		35A161E2241FB03A004E2EEF /* CategoryShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A161E0241FB03A004E2EEF /* CategoryShimmerCell.xib */; };
+		35A161E4241FB160004E2EEF /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A161E3241FB15F004E2EEF /* ShimmerView.swift */; };
+		35A161E6241FB1CF004E2EEF /* ShimmerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A161E5241FB1CE004E2EEF /* ShimmerViewTests.swift */; };
 		35F4438F241B839500CC9788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F4438E241B839500CC9788 /* AppDelegate.swift */; };
 		35F44391241B839500CC9788 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F44390241B839500CC9788 /* SceneDelegate.swift */; };
 		35F44396241B839500CC9788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F44394241B839500CC9788 /* Main.storyboard */; };
@@ -89,6 +95,12 @@
 		35A161CA241D8E61004E2EEF /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		35A161CB241D8E61004E2EEF /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		35A161CC241D8E61004E2EEF /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		35A161DA241FA8DC004E2EEF /* MediaShimmerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaShimmerViewCell.swift; sourceTree = "<group>"; };
+		35A161DB241FA8DC004E2EEF /* MediaShimmerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaShimmerViewCell.xib; sourceTree = "<group>"; };
+		35A161DF241FB03A004E2EEF /* CategoryShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryShimmerCell.swift; sourceTree = "<group>"; };
+		35A161E0241FB03A004E2EEF /* CategoryShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryShimmerCell.xib; sourceTree = "<group>"; };
+		35A161E3241FB15F004E2EEF /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		35A161E5241FB1CE004E2EEF /* ShimmerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerViewTests.swift; sourceTree = "<group>"; };
 		35F4438B241B839500CC9788 /* MindValley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindValley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35F4438E241B839500CC9788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35F44390241B839500CC9788 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +217,18 @@
 			path = Roboto;
 			sourceTree = "<group>";
 		};
+		35A161DE241FAFE5004E2EEF /* ShimmerCells */ = {
+			isa = PBXGroup;
+			children = (
+				35A161DA241FA8DC004E2EEF /* MediaShimmerViewCell.swift */,
+				35A161DB241FA8DC004E2EEF /* MediaShimmerViewCell.xib */,
+				35A161DF241FB03A004E2EEF /* CategoryShimmerCell.swift */,
+				35A161E0241FB03A004E2EEF /* CategoryShimmerCell.xib */,
+				35A161E3241FB15F004E2EEF /* ShimmerView.swift */,
+			);
+			path = ShimmerCells;
+			sourceTree = "<group>";
+		};
 		35F44382241B839500CC9788 = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +270,7 @@
 				35F443C7241BA81800CC9788 /* MVEndpointTest.swift */,
 				35F443CB241BA8CC00CC9788 /* MVNetworkTests.swift */,
 				35F443A7241B839700CC9788 /* Info.plist */,
+				35A161E5241FB1CE004E2EEF /* ShimmerViewTests.swift */,
 			);
 			path = MindValleyTests;
 			sourceTree = "<group>";
@@ -326,6 +351,7 @@
 				35F443ED241CCE0000CC9788 /* CollectionCells */,
 				35F443EC241CCDD500CC9788 /* TableViewSectionsCells */,
 				35A161BA241D89B7004E2EEF /* UICollectionView+Reusable */,
+				35A161DE241FAFE5004E2EEF /* ShimmerCells */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -464,7 +490,9 @@
 				35F44398241B839700CC9788 /* Assets.xcassets in Resources */,
 				35F44396241B839500CC9788 /* Main.storyboard in Resources */,
 				35A161D6241D8E61004E2EEF /* Roboto-BlackItalic.ttf in Resources */,
+				35A161DD241FA8DC004E2EEF /* MediaShimmerViewCell.xib in Resources */,
 				35F443E5241CCB1900CC9788 /* EpisodesTableViewCell.xib in Resources */,
+				35A161E2241FB03A004E2EEF /* CategoryShimmerCell.xib in Resources */,
 				35A161CD241D8E61004E2EEF /* Roboto-Medium.ttf in Resources */,
 				35A161D2241D8E61004E2EEF /* Roboto-BoldItalic.ttf in Resources */,
 				35A161D1241D8E61004E2EEF /* Roboto-ThinItalic.ttf in Resources */,
@@ -551,6 +579,7 @@
 			files = (
 				35F443E0241C310B00CC9788 /* CategoryCollectionViewCell.swift in Sources */,
 				35F443D2241BD08900CC9788 /* ImageCoordinator.swift in Sources */,
+				35A161E4241FB160004E2EEF /* ShimmerView.swift in Sources */,
 				35F443B5241B8A9200CC9788 /* NetworkManager.swift in Sources */,
 				35A161BD241D8A96004E2EEF /* CellViewModels.swift in Sources */,
 				35F443C2241BA24300CC9788 /* Channels.swift in Sources */,
@@ -562,6 +591,7 @@
 				35F443C0241BA1B600CC9788 /* Episodes.swift in Sources */,
 				35F4438F241B839500CC9788 /* AppDelegate.swift in Sources */,
 				35F443E4241CCB1900CC9788 /* EpisodesTableViewCell.swift in Sources */,
+				35A161DC241FA8DC004E2EEF /* MediaShimmerViewCell.swift in Sources */,
 				35F443C4241BA3CB00CC9788 /* Categories.swift in Sources */,
 				35A161B9241D897B004E2EEF /* ScreenSection.swift in Sources */,
 				35F443DC241C309100CC9788 /* MediaCollectionViewCell.swift in Sources */,
@@ -570,6 +600,7 @@
 				35492F19241CD8EF0000BFA3 /* Constants.swift in Sources */,
 				35F443B7241B945400CC9788 /* MVError.swift in Sources */,
 				35F443BB241B94CE00CC9788 /* HelperProtocols.swift in Sources */,
+				35A161E1241FB03A004E2EEF /* CategoryShimmerCell.swift in Sources */,
 				35F443B9241B949500CC9788 /* MVEndPoints.swift in Sources */,
 				35F443E8241CCC9B00CC9788 /* CategoryTableViewCell.swift in Sources */,
 			);
@@ -579,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A161E6241FB1CF004E2EEF /* ShimmerViewTests.swift in Sources */,
 				35F443C8241BA81800CC9788 /* MVEndpointTest.swift in Sources */,
 				35F443C6241BA62800CC9788 /* MVErrorTest.swift in Sources */,
 				35F443CC241BA8CC00CC9788 /* MVNetworkTests.swift in Sources */,

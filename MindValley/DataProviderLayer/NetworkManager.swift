@@ -42,7 +42,7 @@ extension MVNetworkManager {
                 let modelType = ResultDecodable<T>.self
                 let responseModel = try JSONDecoder().decode(modelType, from: jsonData)
                 print(responseModel)
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     completion(responseModel.data, nil,path)
                 }
             } catch {

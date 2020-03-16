@@ -16,6 +16,22 @@ class MediaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mediaImageView: UIImageView!
     @IBOutlet weak var mediaTitle: UILabel!
     @IBOutlet weak var channelTitle: UILabel!
+//    var height: CGFloat {
+//        let mediaTitleHeight = mediaTitle.intrinsicContentSize.height
+//        let channelTitleHeight = channelTitle.intrinsicContentSize.height
+//        let mediaImageHeight = mediaImageView.intrinsicContentSize.height
+//        
+//        return mediaTitleHeight + channelTitleHeight + mediaImageHeight + 46
+//    }
+//
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: self.contentView.frame.width, height: height)
+//    }
+    
     var episodeCellVM: EpisodeCellViewModel! {
         didSet {
             mediaDefaultBottomConstraint.priority = UILayoutPriority(rawValue: 999)

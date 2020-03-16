@@ -41,11 +41,20 @@ class EpisodesTableViewCell: UITableViewCell {
         episodesCollectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        self.episodesCollectionView.layoutIfNeeded()
-        self.episodesCollectionView.frame = CGRect.init(origin: .zero, size: CGSize.init(width: targetSize.width, height: 500))
-       
-        return self.episodesCollectionView.collectionViewLayout.collectionViewContentSize
         
+        let cellWidth = Int(((episodesCollectionView.frame.width) / columns) - (inset + spacing))
+        let constraintVertical: CGFloat = 32.0
+        
+        episodesCollectionView.frame = CGRect.init(origin: .zero, size: CGSize.init(width: targetSize.width, height: CGFloat(2 * cellWidth)))
+        
+        let correctHeight = self.episodesCollectionView.collectionViewLayout.collectionViewContentSize.height + constraintVertical + floor(self.episodeSectionTitle.intrinsicContentSize.height)
+        
+        let correctWidth =  episodesCollectionView.collectionViewLayout.collectionViewContentSize.width
+        
+        episodesCollectionView.reloadData()
+        episodesCollectionView.layoutIfNeeded()
+        
+       return CGSize(width: correctWidth, height: correctHeight)
     }
 }
 

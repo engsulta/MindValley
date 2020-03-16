@@ -12,6 +12,7 @@ class ChannelTableViewCell: UITableViewCell {
     var columns = Constants.Collections.columns
     let inset = Constants.Collections.inset
     let spacing = Constants.Collections.spacing
+    var heightFactor = 2
     
     @IBOutlet weak var channelImageView: UIImageView!
     @IBOutlet weak var channelTitle: UILabel!
@@ -32,8 +33,10 @@ class ChannelTableViewCell: UITableViewCell {
             switch channelSectionVM.channelType {
             case .course:
                 columns = 2
+                heightFactor = 2
             case .series:
                 columns = 1.2
+                heightFactor = 1
                
             }
              mediaCollectionView.reloadData()
@@ -69,11 +72,20 @@ class ChannelTableViewCell: UITableViewCell {
         mediaCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        self.mediaCollectionView.layoutIfNeeded()
-        self.mediaCollectionView.frame = CGRect.init(origin: .zero, size: CGSize.init(width: targetSize.width, height: 500))
-        return self.mediaCollectionView.collectionViewLayout.collectionViewContentSize
+        
+        let verticalConstraint: CGFloat = 35.0
+        let channelImageHeightConstraint: CGFloat = 50.0
+        let width = Int(((mediaCollectionView.frame.width) / columns) - (inset + spacing))
+        
+        self.mediaCollectionView.frame = CGRect.init(origin: .zero, size: CGSize.init(width: targetSize.width, height: CGFloat(heightFactor * width)))
+        let correctHeight = self.mediaCollectionView.collectionViewLayout.collectionViewContentSize.height + verticalConstraint + channelImageHeightConstraint
+         let correctWidth =  mediaCollectionView.collectionViewLayout.collectionViewContentSize.width
+        
+         mediaCollectionView.reloadData()
+         self.mediaCollectionView.layoutIfNeeded()
+        
+        return CGSize(width: correctWidth, height: correctHeight)
     }
-    
 }
 
 // MARK: UICollectionViewDataSource
@@ -101,7 +113,7 @@ extension ChannelTableViewCell: UICollectionViewDelegateFlowLayout {
     
     let width = Int(((collectionView.frame.width) / columns) - (inset + spacing))
         
-    return CGSize(width: width, height: 2 * width)
+    return CGSize(width: width, height: heightFactor * width)
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
