@@ -24,52 +24,98 @@
                             <constraint firstAttribute="height" constant="25" id="jXK-Of-zsG"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWB-y2-0hn" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
-                        <rect key="frame" x="46" y="78" width="178" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-0t-fYy" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
-                        <rect key="frame" x="249" y="78" width="178" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-Qr-Qpl" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
-                        <rect key="frame" x="249" y="173" width="178" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-2B-DUT" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
-                        <rect key="frame" x="46" y="173" width="178" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TyM-q7-0kS" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
-                        <rect key="frame" x="46" y="261" width="178" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpa-rf-t6p" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
-                        <rect key="frame" x="249" y="261" width="178" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="XqK-Ka-Dad">
+                        <rect key="frame" x="46" y="78" width="381" height="60"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWB-y2-0hn" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="60"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dY5-5Q-n9P"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-0t-fYy" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
+                                <rect key="frame" x="203" y="0.0" width="178" height="60"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Vc8-8V-n5Q"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="0my-fO-cNZ"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Bad-Dy-Wki">
+                        <rect key="frame" x="46" y="173" width="381" height="60"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-2B-DUT" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="60"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dPX-cy-42F"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-Qr-Qpl" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
+                                <rect key="frame" x="203" y="0.0" width="178" height="60"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Zsp-1a-6Ez"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="kmJ-CZ-9sm"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="HXQ-uZ-6FI">
+                        <rect key="frame" x="46" y="261" width="381" height="60"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyM-q7-0kS" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="60"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gRF-i1-KKa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpa-rf-t6p" customClass="ShimmerView" customModule="MindValley" customModuleProvider="target">
+                                <rect key="frame" x="203" y="0.0" width="178" height="60"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2FB-lY-VXz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="lEA-CR-clD"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Bad-Dy-Wki" firstAttribute="leading" secondItem="XqK-Ka-Dad" secondAttribute="leading" id="A4u-IV-mad"/>
+                    <constraint firstItem="Bad-Dy-Wki" firstAttribute="top" secondItem="XqK-Ka-Dad" secondAttribute="bottom" constant="35" id="CQQ-ik-Uqo"/>
+                    <constraint firstAttribute="trailing" secondItem="XqK-Ka-Dad" secondAttribute="trailing" constant="35" id="G2y-jb-aXA"/>
+                    <constraint firstItem="XqK-Ka-Dad" firstAttribute="top" secondItem="oA5-fO-XN0" secondAttribute="bottom" constant="25" id="LFU-p5-Gn7"/>
+                    <constraint firstAttribute="bottom" secondItem="HXQ-uZ-6FI" secondAttribute="bottom" constant="47" id="UhQ-RQ-XcR"/>
+                    <constraint firstItem="XqK-Ka-Dad" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="46" id="X0c-kb-OIJ"/>
                     <constraint firstItem="oA5-fO-XN0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="28" id="ie2-oQ-Ko2"/>
+                    <constraint firstItem="HXQ-uZ-6FI" firstAttribute="trailing" secondItem="XqK-Ka-Dad" secondAttribute="trailing" id="kTD-3K-ob2"/>
+                    <constraint firstItem="Bad-Dy-Wki" firstAttribute="trailing" secondItem="XqK-Ka-Dad" secondAttribute="trailing" id="lvA-6s-MJd"/>
+                    <constraint firstItem="HXQ-uZ-6FI" firstAttribute="leading" secondItem="XqK-Ka-Dad" secondAttribute="leading" id="rKt-6X-akq"/>
                     <constraint firstItem="oA5-fO-XN0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="tVY-gl-z0h"/>
+                    <constraint firstItem="HXQ-uZ-6FI" firstAttribute="top" secondItem="Bad-Dy-Wki" secondAttribute="bottom" constant="28" id="wYs-0L-dcA"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outletCollection property="shimmerdViews" destination="oA5-fO-XN0" collectionClass="NSMutableArray" id="NkV-u9-Uhi"/>
                 <outletCollection property="shimmerdViews" destination="EWB-y2-0hn" collectionClass="NSMutableArray" id="JWs-x6-rnQ"/>
                 <outletCollection property="shimmerdViews" destination="LCR-0t-fYy" collectionClass="NSMutableArray" id="J89-k7-GhH"/>
-                <outletCollection property="shimmerdViews" destination="Gcu-Qr-Qpl" collectionClass="NSMutableArray" id="xt1-MJ-m5V"/>
                 <outletCollection property="shimmerdViews" destination="ypf-2B-DUT" collectionClass="NSMutableArray" id="rO0-cy-OWF"/>
+                <outletCollection property="shimmerdViews" destination="Gcu-Qr-Qpl" collectionClass="NSMutableArray" id="xt1-MJ-m5V"/>
                 <outletCollection property="shimmerdViews" destination="TyM-q7-0kS" collectionClass="NSMutableArray" id="oLV-Du-dPp"/>
                 <outletCollection property="shimmerdViews" destination="vpa-rf-t6p" collectionClass="NSMutableArray" id="FFh-Dz-khE"/>
-                <outletCollection property="shimmerdViews" destination="oA5-fO-XN0" collectionClass="NSMutableArray" id="NkV-u9-Uhi"/>
             </connections>
             <point key="canvasLocation" x="144.92753623188406" y="91.741071428571431"/>
         </tableViewCell>

@@ -20,6 +20,7 @@ class CategoryShimmerCell: UITableViewCell {
         func startShimmer() {
             shimmerdViews.forEach { (shimmerdView) in
                 shimmerdView.startAnimation()
+                shimmerdView.layer.cornerRadius = shimmerdView.frame.height / 2
             }
         }
     }

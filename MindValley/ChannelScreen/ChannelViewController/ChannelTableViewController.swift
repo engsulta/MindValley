@@ -11,7 +11,7 @@ import UIKit
 class ChannelTableViewController: UITableViewController {
     
     var channelTableVM : ChannelTableViewModel = ChannelTableViewModel()
-    var loadingStatus: [Int: Bool] = [0:true, 1: true, 2: true ]
+    var loadingState: [Int: LoadingState] = [0: .loading, 1: .loading, 2: .loading]
     lazy var shimmerCell = MediaShimmerViewCell()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,21 +37,15 @@ class ChannelTableViewController: UITableViewController {
     }
     
     private func initVM() {
-        channelTableVM.reloadTableSectionClosure = { [weak self] tableSection in
-         //   self?.tableView.beginUpdates()
-         //   self?.tableView.reloadSections([tableSection.sequence], with: .automatic)
-          //  self?.tableView.endUpdates()
-        }
-        
         channelTableVM.updateLoadingStatus = { [weak self] isLoading, tableSection in
-            // will be used to hide the loading for this section
-            self?.loadingStatus[tableSection.sequence] = isLoading
+
+            self?.loadingState[tableSection.sequence] = isLoading
             self?.tableView.beginUpdates()
             self?.tableView.reloadSections([tableSection.sequence], with: .automatic)
             self?.tableView.endUpdates()
         }
-        
     }
+
     private func fetchModels() {
         channelTableVM.load(section: .episodes)
         channelTableVM.load(section: .channels)
@@ -69,17 +63,12 @@ class ChannelTableViewController: UITableViewController {
         
         switch section {
         case 0:
-            guard loadingStatus[0] == false else { return 1}
-            let numberOfSections = (channelTableVM.episodesViewModels.count > 0 ) ?  1 : 0
-            return numberOfSections
+            return loadingState[0]?.numberOfSection ?? 0
         case 1:
-            guard loadingStatus[1] == false else { return 1}
-            return channelTableVM.channelsSectionsViewModels.count
-        case 2:
-            guard loadingStatus[2] == false else { return 1}
-            let numberOfSections =
-            (channelTableVM.categoryViewModel.count > 0 ) ? 1 : 0
+            let numberOfSections = (loadingState[1] == .succeed) ?  channelTableVM.channelsSectionsViewModels.count : loadingState[1]?.numberOfSection ?? 0
             return numberOfSections
+        case 2:
+            return loadingState[2]?.numberOfSection ?? 0
         default: return 0
         }
     }
@@ -87,25 +76,32 @@ class ChannelTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            guard loadingStatus[0] == false else {
+            guard loadingState[0] == .succeed else {
                 let cell:MediaShimmerViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 return cell
             }
             let cell:EpisodesTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.episodesSectionVM = channelTableVM.episodesViewModels
             return cell
+
         case 1:
-            guard loadingStatus[1] == false else {  let cell:MediaShimmerViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-                           return cell}
+            guard loadingState[1] == .succeed else {
+                let cell:MediaShimmerViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                return cell
+            }
             let cell:ChannelTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.channelSectionVM = channelTableVM.channelsSectionsViewModels[indexPath.row]
             return cell
+
         case 2:
-            guard loadingStatus[2] == false else {  let cell: CategoryShimmerCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-                           return cell}
+            guard loadingState[2] == .succeed else {
+                let cell: CategoryShimmerCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                return cell
+            }
             let cell:CategoryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.categoryVM = channelTableVM.categoryViewModel
             return cell
+    
         default:
             return UITableViewCell()
         }

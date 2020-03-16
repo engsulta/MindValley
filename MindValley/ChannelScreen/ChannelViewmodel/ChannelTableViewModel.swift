@@ -12,7 +12,7 @@ class ChannelTableViewModel {
     
     /// view model closures to be injected by the view controller
     var reloadTableSectionClosure: (( _ section: ScreenSection)->())?
-    var updateLoadingStatus: (( _ state: Bool, _ section: ScreenSection)->())?
+    var updateLoadingStatus: (( _ state: LoadingState, _ section: ScreenSection)->())?
 
     //MARK: -  VM properties
     var episodesViewModels: [EpisodeCellViewModel] = [EpisodeCellViewModel]()
@@ -23,35 +23,46 @@ class ChannelTableViewModel {
     func load(section: ScreenSection) {
         
          /// update loading state for each section
-        self.updateLoadingStatus?(true, section)
+        self.updateLoadingStatus?(.loading, section)
         section.execute { [weak self] responseModel, error, section in
             guard let self = self else { return }
             
             let screenSection = ScreenSection(endPoint: section)
-            
+
             /// do not do any thing in case of error so when section reload will not show this section
-            guard error == nil, let response = responseModel else { return }
+            guard error == nil, let response = responseModel else {
+                self.updateLoadingStatus?(.failed, screenSection)
+                return
+            }
+            var loadingState: LoadingState = .succeed
             
             switch section {
             case .newEpisodes:
                 if let episodes = (response as? EpisodesModel)?.media {
-                self.mapEpisodesToViewModel(episodes: episodes) }
-                
+                    self.mapEpisodesToViewModel(episodes: episodes)
+                }
+                else {
+                    loadingState = .failed }
+
             case .channels:
                 if let channels = (response as? ChannelsModel)?.channels {
-                    self.mapChannelsToViewModel(channels: channels) }
+                    self.mapChannelsToViewModel(channels: channels)
+                }
+                else {
+                    loadingState = .failed }
                 
             case .categories:
                 if let categories = (response as? CategoriesModel)?.categories {
-                    self.mapCategoriesToViewModel(categories: categories) }
-                
+                    self.mapCategoriesToViewModel(categories: categories)
+                }
+                else {
+                    loadingState = .failed }
             }
+            
             /// stop loading section or hide shimmer for this section
-            self.updateLoadingStatus?(false, screenSection)
-            /// reload table for each section
-            //self.reloadTableSectionClosure?(screenSection)
+            self.updateLoadingStatus?(loadingState, screenSection)
+            
         }
-           
     }
     
     // MARK:- Mapping fetched data

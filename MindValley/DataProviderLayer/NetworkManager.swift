@@ -42,11 +42,13 @@ extension MVNetworkManager {
                 let modelType = ResultDecodable<T>.self
                 let responseModel = try JSONDecoder().decode(modelType, from: jsonData)
                 print(responseModel)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                //  i added some delay to test the shimming views
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     completion(responseModel.data, nil,path)
                 }
             } catch {
-                DispatchQueue.main.async {
+                // note i added some delay to test the shimming views
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     completion(nil, MVError.faildToDecode, path)
                 }
             }

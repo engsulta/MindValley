@@ -8,6 +8,21 @@
 
 import Foundation
 
+// will map to number of sections
+enum LoadingState {
+    case loading
+    case succeed
+    case failed
+    var numberOfSection: Int {
+        switch self {
+        case .loading, .succeed:
+            return 1
+        default:
+            return 0
+        }
+    }
+}
+
 enum ScreenSection {
     case episodes
     case channels
