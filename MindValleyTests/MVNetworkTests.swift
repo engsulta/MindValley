@@ -24,20 +24,20 @@ class MVNetworkTests: XCTestCase {
 
     func testRequestSucceed() {
         let exp = expectation(description: #function)
-        mockNetworkManager.request(path: .newEpisodes, model: TestCoding.self) { [weak self] (response, error) in
+        mockNetworkManager.request(path: .newEpisodes, model: TestCoding.self) { [weak self] (response, error, section)  in
             if error == nil {
-                XCTAssertNotNil(response as? ResultDecodable<TestCoding>)
+                XCTAssertEqual((response as? TestCoding)?.name , "test1")
                 XCTAssertEqual(self?.mockSession.urlSessionDataTaskMock.isResumedCalled, true)
             } else {
                 XCTFail("decoding not work successfully")
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 2.0)
+        wait(for: [exp], timeout: 5.0)
     }
     func testRequestFailed() {
-           let exp = expectation(description: #function)
-        mockNetworkManager.request(path: .newEpisodes, model: String.self) { [weak self] (response, error) in
+        let exp = expectation(description: #function)
+        mockNetworkManager.request(path: .newEpisodes, model: String.self) { [weak self] (response, error, section)  in
                if error != nil {
                   XCTAssertEqual(error, MVError.faildToDecode)
                } else {
@@ -45,7 +45,7 @@ class MVNetworkTests: XCTestCase {
                }
                exp.fulfill()
            }
-           wait(for: [exp], timeout: 2.0)
+           wait(for: [exp], timeout: 5.0)
        }
 }
 

@@ -10,6 +10,8 @@ import Foundation
 
 class ChannelTableViewModel {
     
+    // we can inject testable provider here
+    var dataProvider: MVNetworkManagerProtocol = MVNetworkManager.shared
     /// view model closures to be injected by the view controller
     var reloadTableSectionClosure: (( _ section: ScreenSection)->())?
     var updateLoadingStatus: (( _ state: LoadingState, _ section: ScreenSection)->())?
@@ -24,7 +26,7 @@ class ChannelTableViewModel {
         
          /// update loading state for each section
         self.updateLoadingStatus?(.loading, section)
-        section.execute { [weak self] responseModel, error, section in
+        section.execute(using: dataProvider) { [weak self] responseModel, error, section in
             guard let self = self else { return }
             
             let screenSection = ScreenSection(endPoint: section)
@@ -61,12 +63,11 @@ class ChannelTableViewModel {
             
             /// stop loading section or hide shimmer for this section
             self.updateLoadingStatus?(loadingState, screenSection)
-            
         }
     }
     
     // MARK:- Mapping fetched data
-    private func mapChannelsToViewModel(channels: [Channel]) {
+    func mapChannelsToViewModel(channels: [Channel]) {
         channels.forEach{(channel) in
             
             var channelVMS = [ChannelCellViewModel]()
@@ -93,7 +94,7 @@ class ChannelTableViewModel {
     }
 
     
-    private func mapEpisodesToViewModel(episodes: [Media]) {
+    func mapEpisodesToViewModel(episodes: [Media]) {
         episodes.forEach { (episode) in
             let episodeVM = EpisodeCellViewModel(episodeTitle: episode.title,
                                                  channelTitle: episode.channel?.title,
@@ -101,7 +102,7 @@ class ChannelTableViewModel {
             self.episodesViewModels.append(episodeVM)
         }
     }
-    private func mapCategoriesToViewModel(categories: [Category]) {
+    func mapCategoriesToViewModel(categories: [Category]) {
         categories.forEach {
             self.categoryViewModel.append(CategoryCellViewModel(categortName: $0.name))
         }

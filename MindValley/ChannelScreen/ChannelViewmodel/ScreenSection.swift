@@ -58,14 +58,14 @@ enum ScreenSection {
             
         }
     }
-    func execute(completion: @escaping NetworkCompletion) {
+    func execute(using provider: MVNetworkManagerProtocol, completion: @escaping NetworkCompletion) {
         switch self {
         case .episodes:
-             MVNetworkManager.shared.request(path: self.endPoint, model: EpisodesModel.self, completion: completion)
+             provider.request(path: self.endPoint, model: EpisodesModel.self, completion: completion)
         case .channels:
-              MVNetworkManager.shared.request(path: self.endPoint, model: ChannelsModel.self, completion: completion)
+              provider.request(path: self.endPoint, model: ChannelsModel.self, completion: completion)
         case .categories:
-              MVNetworkManager.shared.request(path: self.endPoint, model: CategoriesModel.self, completion: completion)
+              provider.request(path: self.endPoint, model: CategoriesModel.self, completion: completion)
         }
         
     }

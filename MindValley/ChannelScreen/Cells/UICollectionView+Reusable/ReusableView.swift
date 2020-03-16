@@ -35,3 +35,19 @@ extension UITableViewCell: ReusableCell {
 /// Make `UICollectionViewCell` reusable cell.
 extension UICollectionViewCell: ReusableCell {
 }
+
+extension UIViewController {
+
+    public class func instance<T: UIViewController>(from storyboardName: String,
+                                                    with identifier: String = String("\(T.self)"),
+                                                    bundle: Bundle? = nil) -> T {
+        // if storyboard with storyboardName doesn't exist or bundle doesn't contain storyboard then init
+        // of UIStoryboard will throw NSException
+        let storyboard = UIStoryboard(name: storyboardName, bundle: bundle)
+        guard let storyboardVC = storyboard.instantiateViewController(withIdentifier: identifier) as? T else {
+            print("can not instansiate the view controller")
+            return T()
+        }
+        return storyboardVC
+    }
+}
