@@ -43,9 +43,10 @@ class CategoryTableViewCell: UITableViewCell {
     }
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         self.categoryCollectionView.layoutIfNeeded()
-        let correctHeight = self.categorySectionTitle.intrinsicContentSize.height + 32 + categoryCollectionView.collectionViewLayout.collectionViewContentSize.height
+        let correctHeight = floor(self.categorySectionTitle.intrinsicContentSize.height)
+            + 32 + categoryCollectionView.collectionViewLayout.collectionViewContentSize.height
         let correctWidth =  categoryCollectionView.collectionViewLayout.collectionViewContentSize.width
-        
+        categoryCollectionView.reloadData()
         return CGSize(width: correctWidth, height: correctHeight)
     }
 }
@@ -73,7 +74,7 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
 extension CategoryTableViewCell: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
-    let width = Int(((collectionView.frame.width - 84) / 2) - 2*(inset + spacing))
+    let width = Int(((collectionView.frame.width - 40 ) / 2) - 2 * (inset + spacing))
         
     return CGSize(width: width, height: 60)
   }
