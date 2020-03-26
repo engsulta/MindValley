@@ -27,4 +27,4 @@ Testability
 - Network Provider 
 - shimmer 
 
-![width=30%](Images/1.png)  ![width=30%](Images/2.png)  ![width=30%](Images/3.png)
+![width=30%](Images/1.png)  ![width=30%](Images/2.png)  [width=30%](Images/3.png)
