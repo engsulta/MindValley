@@ -8,7 +8,7 @@ The app architecture is MVVM.
 
 To get started, you will need to have the Kingfisher pod installed in your workspace by adding the following line to your podspec and running the pod install command
 
-`pod 'Kingfisher'
+`pod 'Kingfisher'`
 
 ### features
 Readability
