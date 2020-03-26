@@ -1,5 +1,5 @@
 # MindValley
-This is a sample App demo for MindValley awsome app with greate UI design, native network testable layer,and native shimmering. 
+This is a sample App demo for MindValley awesome app with great UI design, native network testable layer, and native shimmering. 
 The app architecture is MVVM.
 
 ## Summary
@@ -26,6 +26,7 @@ Testability
 
 - Network Provider 
 - shimmer 
+
 
 ![width=30%](Images/1.png)  
 ![width=30%](Images/2.png) 
