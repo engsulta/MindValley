@@ -8,7 +8,7 @@
 
 import Foundation
 import Kingfisher
-
+import UIKit
 final class ImageCoordinator {
     typealias KingFisherCompletionHandler = (UIImage?, Error?) -> Void
     static func getImage(withURLString urlString: String?, completion: @escaping KingFisherCompletionHandler) {
