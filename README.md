@@ -1,5 +1,5 @@
 # MindValley
-This is a sample App demo for MindValley awsome app with greate UI design, native network testable layer,and native shimmering. 
+This is a sample App demo for MindValley awesome app with great UI design, native network testable layer, and native shimmering. 
 The app architecture is MVVM.
 
 ## Summary
@@ -8,7 +8,7 @@ The app architecture is MVVM.
 
 To get started, you will need to have the Kingfisher pod installed in your workspace by adding the following line to your podspec and running the pod install command
 
-`pod 'Kingfisher'
+`pod 'Kingfisher'`
 
 ### features
 Readability
@@ -27,4 +27,7 @@ Testability
 - Network Provider 
 - shimmer 
 
-![width=50%](Images/1.png)  ![width=50%](Images/2.png)  ![width=50%](Images/3.png)
+
+![width=30%](Images/1.png)  
+![width=30%](Images/2.png) 
+![width=30%](Images/3.png)
